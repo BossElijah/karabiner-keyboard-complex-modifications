@@ -141,6 +141,66 @@
 					"type": "basic"
 				}
 			]
+		},
+		{
+			"description": "Custom: Change shift+backspace to delete_forward",
+			"manipulators": [{
+					"type": "basic",
+					"from": {
+						"key_code": "delete_or_backspace",
+						"modifiers": {
+							"mandatory": [
+								"left_shift"
+							],
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [{
+						"key_code": "delete_forward",
+						"modifiers": []
+					}]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "delete_or_backspace",
+						"modifiers": {
+							"mandatory": [
+								"right_shift"
+							],
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [{
+						"key_code": "delete_forward",
+						"modifiers": []
+					}]
+				}
+			]
+		},
+		{
+			"description": "Custom: Change spacebar to left_shift. (Post spacebar if pressed alone)",
+			"manipulators": [{
+				"from": {
+					"key_code": "spacebar",
+					"modifiers": {
+						"optional": [
+							"any"
+						]
+					}
+				},
+				"to": [{
+					"key_code": "left_shift"
+				}],
+				"to_if_alone": [{
+					"key_code": "spacebar"
+				}],
+				"type": "basic"
+			}]
 		}
 	]
 }
